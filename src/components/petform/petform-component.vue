@@ -29,6 +29,7 @@
           <td>{{pet.id}}</td>
           <td>{{pet.name}}</td>
           <td>{{pet.age}}</td>
+          <td><button @click="remove(pet.id)">Remove</button></td>
         </tr>
       </table>
   </div>
@@ -64,6 +65,13 @@
         .then((pets) => {
            this.pets = pets;
         });
+      },
+      remove(id){
+        new PetService().remove(id).then(
+          response=>{
+            this.list();
+          }
+        )
       }
     },
   }
