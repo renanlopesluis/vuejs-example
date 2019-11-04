@@ -1,18 +1,24 @@
 <template>
   <div class="container">
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Ações</th>
-      </tr>
-      <tr v-for="pet in pets">
-        <td>{{pet.id}}</td>
-        <td>{{pet.name}}</td>
-        <td>{{pet.age}}</td>
-        <td><button @click="remove(pet.id)">Remove</button></td>
-      </tr>
+    <table class="table">
+     <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Type</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="pet in pets">
+          <td>{{pet.id}}</td>
+          <td>{{pet.name}}</td>
+          <td>{{pet.age}}</td>
+          <td>{{pet.type}}</td>
+          <td><button class="btn btn-danger" @click="remove(pet.id)">Remove</button></td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>

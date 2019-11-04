@@ -15,7 +15,7 @@
                       <input type="number" id="age" class="form-control"
                           placeholder="age" required v-model="pet.age"/>
                   </div>
-                  <button color="primary" @click="save($event)">Save</button>
+                  <button class="btn btn-primary" @click="save($event)">Save</button>
               </form>
           </div>
       </section>

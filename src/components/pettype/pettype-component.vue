@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
       <label for="type">Type</label>
-      <select v-model="selected" @change="emitEventChanged">
+      <select class="form-control" v-model="selected" @change="emitEventChanged">
         <option disabled value="">Choose..</option>
         <option v-for="option in types" v-bind:value="option">
           {{ option.description }}
