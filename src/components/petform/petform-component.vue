@@ -19,30 +19,15 @@
               </form>
           </div>
       </section>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Age</th>
-        </tr>
-        <tr v-for="pet in pets">
-          <td>{{pet.id}}</td>
-          <td>{{pet.name}}</td>
-          <td>{{pet.age}}</td>
-          <td><button @click="remove(pet.id)">Remove</button></td>
-        </tr>
-      </table>
   </div>
 </template>
-
 <script>
   import PetType from '../pettype/pettype-component.vue';
   import PetService from '../../services/pet-service.js'
   export default{
     data(){
       return {
-        pet: {},
-        pets:  this.list()
+        pet: {}
       }
     },
     components: {
@@ -56,23 +41,10 @@
         $event.preventDefault();
         new PetService().save(this.pet).then(
           reponse =>{
-            this.list();
-          }
-        )
-      },
-      list(){
-        new PetService().list().then((response)=>response.json())
-        .then((pets) => {
-           this.pets = pets;
-        });
-      },
-      remove(id){
-        new PetService().remove(id).then(
-          response=>{
-            this.list();
+            alert('Pet '+this.pet.name+' has been saved');
           }
         )
       }
-    },
+    }
   }
 </script>

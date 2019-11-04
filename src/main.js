@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import PetForm from './components/petform/petform-component.vue'
+import router from './router/index';
+import NavigationMenu from './components/nagivation-menu/nagivation-menu-component.vue';
 
-Vue.component('pet-form', PetForm);
+Vue.component('navigation-menu', NavigationMenu);
 new Vue({
   el: '#app',
+  router,
   render: h => h(App)
 })

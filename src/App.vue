@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <pet-form></pet-form>
+    <navigation-menu></navigation-menu>
   </div>
 </template>
 
