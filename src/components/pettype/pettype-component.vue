@@ -11,20 +11,24 @@
 </template>
 
 <script>
+  import PetTypeService from '../../services/pettype-service.js'
+  const service = new PetTypeService();
   export default{
     data(){
       return{
-        types: [
-          {id: 1, description: 'Bird'},
-          {id: 2, description: 'Cat'},
-          {id: 3, description: 'Dog'}
-        ],
+        types: this.list(),
         selected: {}
       }
     },
     methods:{
       emitEventChanged(){
         this.$emit('EventInputChanged', this.selected)
+      },
+      list(){
+        service.list().then((response)=>response.json())
+        .then((types) => {
+           this.types = types;
+        });
       }
     }
   }
