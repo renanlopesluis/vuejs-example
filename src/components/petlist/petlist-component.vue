@@ -16,7 +16,10 @@
           <td>{{pet.name}}</td>
           <td>{{pet.age}}</td>
           <td>{{pet.type}}</td>
-          <td><button class="btn btn-danger" @click="remove(pet.id)">Remove</button></td>
+          <td>
+            <router-link  class="btn btn-success" to="/pet/1">Profile</router-link>
+            <button class="btn btn-danger" @click="remove(pet.id)">Remove</button>
+          </td>
         </tr>
       </tbody>
     </table>
